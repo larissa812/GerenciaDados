@@ -1,4 +1,3 @@
-
 # Simula a geração de dados de sensores de IoT e envia para o Kafka.
 
 import json
@@ -7,11 +6,6 @@ import random
 from kafka import KafkaProducer
 
 # Configuração do produtor Kafka
-# Altere o endereço para 'localhost:9098' conforme a sua configuração no docker-compose.yml
-# O valor 'localhost:9092' é o valor padrão. Caso tenha alterado a porta para 9098,
-# use o host/porta correspondente.
-# Para a sua configuração de docker-compose, use 'localhost:9098'
-# Para o comando docker exec, use 'kafka:9092'
 bootstrap_servers = 'localhost:9098'
 topic_name = 'leituras-stream'
 
@@ -26,12 +20,16 @@ except Exception as e:
     print(f"Erro ao conectar ao Kafka: {e}")
     exit()
 
-# Dados de exemplo para as fazendas e sensores
+# Dados de exemplo para as fazendas e sensores (expandido)
 fazendas = [
     {'id': 1, 'nome': 'Fazenda Sol Nascente', 'localizacao': {'lat': -15.8, 'lon': -47.9}},
     {'id': 2, 'nome': 'Fazenda Verde', 'localizacao': {'lat': -20.5, 'lon': -45.3}},
     {'id': 3, 'nome': 'Fazenda Lua Cheia', 'localizacao': {'lat': -22.9, 'lon': -43.2}},
-    {'id': 4, 'nome': 'Fazenda Estrela Guia', 'localizacao': {'lat': -10.2, 'lon': -55.8}}
+    {'id': 4, 'nome': 'Fazenda Estrela Guia', 'localizacao': {'lat': -10.2, 'lon': -55.8}},
+    {'id': 5, 'nome': 'Fazenda Monte Verde', 'localizacao': {'lat': -23.5, 'lon': -46.6}},
+    {'id': 6, 'nome': 'Fazenda Ribeirão', 'localizacao': {'lat': -25.4, 'lon': -49.2}},
+    {'id': 7, 'nome': 'Fazenda do Cerrado', 'localizacao': {'lat': -18.9, 'lon': -48.2}},
+    {'id': 8, 'nome': 'Fazenda Pantanal', 'localizacao': {'lat': -16.5, 'lon': -56.7}}
 ]
 
 sensores = [
@@ -42,7 +40,15 @@ sensores = [
     {'id': 5, 'fazenda_id': 3, 'tipo': 'temperatura', 'unidade': 'C'},
     {'id': 6, 'fazenda_id': 3, 'tipo': 'umidade', 'unidade': '%'},
     {'id': 7, 'fazenda_id': 4, 'tipo': 'temperatura', 'unidade': 'C'},
-    {'id': 8, 'fazenda_id': 4, 'tipo': 'pressao', 'unidade': 'hPa'}
+    {'id': 8, 'fazenda_id': 4, 'tipo': 'pressao', 'unidade': 'hPa'},
+    {'id': 9, 'fazenda_id': 5, 'tipo': 'temperatura', 'unidade': 'C'},
+    {'id': 10, 'fazenda_id': 5, 'tipo': 'umidade', 'unidade': '%'},
+    {'id': 11, 'fazenda_id': 6, 'tipo': 'temperatura', 'unidade': 'C'},
+    {'id': 12, 'fazenda_id': 6, 'tipo': 'pressao', 'unidade': 'hPa'},
+    {'id': 13, 'fazenda_id': 7, 'tipo': 'umidade', 'unidade': '%'},
+    {'id': 14, 'fazenda_id': 7, 'tipo': 'temperatura', 'unidade': 'C'},
+    {'id': 15, 'fazenda_id': 8, 'tipo': 'temperatura', 'unidade': 'C'},
+    {'id': 16, 'fazenda_id': 8, 'tipo': 'umidade', 'unidade': '%'},
 ]
 
 # Função para gerar um valor de leitura aleatório
