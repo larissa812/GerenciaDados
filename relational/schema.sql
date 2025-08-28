@@ -1,12 +1,12 @@
 CREATE TABLE Fazenda (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100),
-    localizacao_geografica POINT  -- Ex: (latitude, longitude)
+    localizacao_geografica POINT  -- (latitude, longitude)
 );
 
 CREATE TABLE Sensor (
     id SERIAL PRIMARY KEY,
-    tipo VARCHAR(50),  -- Ex: 'temperatura', 'umidade'
+    tipo VARCHAR(50),  -- 'temperatura', 'umidade'
     localizacao POINT,
     fazenda_id INTEGER REFERENCES Fazenda(id)
 );
@@ -16,7 +16,7 @@ CREATE TABLE Leitura (
     sensor_id INTEGER REFERENCES Sensor(id),
     timestamp TIMESTAMP NOT NULL,
     valor NUMERIC NOT NULL,
-    unidade VARCHAR(20)  -- Ex: 'C', '%'
+    unidade VARCHAR(20)  -- 'C', '%'
 );
 
 CREATE TABLE Alerta (

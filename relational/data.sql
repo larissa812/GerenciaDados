@@ -21,13 +21,13 @@ INSERT INTO Fazenda (nome, localizacao_geografica) VALUES
 -- Sensores adicionais para as novas fazendas
 INSERT INTO Sensor (tipo, localizacao, fazenda_id) VALUES
 ('temperatura', POINT(-15.81, -47.91), 17), -- Sensor para Fazenda Sol Nascente (id 17)
-('umidade', POINT(-15.82, -47.92), 17), -- Sensor para Fazenda Sol Nascente (id 17)
+('umidade', POINT(-15.82, -47.92), 17), 
 ('temperatura', POINT(-20.51, -45.31), 18), -- Sensor para Fazenda Verde (id 18)
-('umidade', POINT(-20.52, -45.32), 18), -- Sensor para Fazenda Verde (id 18)
+('umidade', POINT(-20.52, -45.32), 18), 
 ('temperatura', POINT(-22.91, -43.21), 19), -- Sensor para Fazenda Lua Cheia (id 19)
-('umidade', POINT(-22.92, -43.22), 19), -- Sensor para Fazenda Lua Cheia (id 19)
+('umidade', POINT(-22.92, -43.22), 19), 
 ('temperatura', POINT(-10.21, -55.81), 20), -- Sensor para Fazenda Estrela Guia (id 20)
-('pressao', POINT(-10.22, -55.82), 20), -- Sensor para Fazenda Estrela Guia (id 20)
+('pressao', POINT(-10.22, -55.82), 20), 
 ('temperatura', POINT(-23.51, -46.61), 21), -- Fazenda Monte Verde
 ('umidade', POINT(-23.52, -46.62), 21),
 ('temperatura', POINT(-25.41, -49.21), 22), -- Fazenda Ribeirão
